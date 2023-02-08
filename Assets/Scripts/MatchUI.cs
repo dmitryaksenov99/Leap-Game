@@ -28,10 +28,12 @@ namespace LeapGame
         public Text EnemyScore { get => enemyScore; }
         public Text MyName { get => myName; }
         public Text EnemyName { get => enemyName; }
-        public Text WinnerLine1 { get => winnerLine1; set => winnerLine1 = value; }
-        public Text WinnerLine2 { get => winnerLine2; set => winnerLine2 = value; }
+        public Text WinnerLine1 { get => winnerLine1; }
+        public Text WinnerLine2 { get => winnerLine2; }
+
         public GameObject WinnerInfoBody { get => winnerInfoBody; }
+        public GameObject MatchUI_Body { get => matchUI_Body; }
+
         public static MatchUI Instance { get { return instance; } }
-        public GameObject MatchUI_Body { get => matchUI_Body; set => matchUI_Body = value; }
     }
 }

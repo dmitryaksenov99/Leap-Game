@@ -91,10 +91,10 @@ namespace LeapGame
             playerMeshRenderer.material.color = color;
         }
 
+        public bool IsPlayerInvulnerable { get => isPlayerInvulnerable; set => isPlayerInvulnerable = value; }
         public int PlayerScore { get => playerScore; set => playerScore = value; }
-        public string PlayerName { get => playerName; set => playerName = value; }
+        public string PlayerName { get => playerName; }
         public PlayerMover PlayerMover { get => playerMover; }
         public UI_Updater UI_Updater { get => uiUpdater; }
-        public bool IsPlayerInvulnerable { get => isPlayerInvulnerable; set => isPlayerInvulnerable = value; }
     }
 }

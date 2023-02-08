@@ -7,8 +7,9 @@ namespace LeapGame
 {
     public class Room : NetworkRoomManager
     {
-        private IList<Player> addedPlayers = new SyncList<Player>();
+        private static Room instance;
         private bool showStartButton = true;
+        private IList<Player> addedPlayers = new SyncList<Player>();
 
         public override void OnGUI()
         {
@@ -101,7 +102,7 @@ namespace LeapGame
         public override void OnRoomServerPlayersReady()
         {
 #if UNITY_SERVER
-        base.OnRoomServerPlayersReady();
+            base.OnRoomServerPlayersReady();
 #else
             showStartButton = true;
 #endif
@@ -117,13 +118,6 @@ namespace LeapGame
             CursorStateChanger.Show();
         }
 
-        private static Room instance;
-        public static Room Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static Room Instance { get { return instance; } }
     }
 }

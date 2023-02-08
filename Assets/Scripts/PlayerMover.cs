@@ -32,11 +32,13 @@ namespace LeapGame
                 return;
             }
         }
+
         private void FixedUpdate()
         {
             velocity = Vector3.Distance(transform.position, oldPosition) / Time.fixedDeltaTime;
             oldPosition = transform.position;
         }
+
         private void Update()
         {
             if (isLocalPlayer == false)
@@ -110,9 +112,10 @@ namespace LeapGame
             return (float)result;
         }
 
-        public float Velocity { get => velocity; set => velocity = value; }
-        public bool IsLeap { get => isLeap; set => isLeap = value; }
-        public CharacterController CharacterController { get => characterController; set => characterController = value; }
+        public float Velocity { get => velocity; }
+        public bool IsLeap { get => isLeap; }
         public bool CanMove { get => canMove; set => canMove = value; }
+
+        public CharacterController CharacterController { get => characterController; }
     }
 }
